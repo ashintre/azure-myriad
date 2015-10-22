@@ -109,8 +109,7 @@
                     "storageProfile": {
                         "osDisk": {
                             "vhdContainers": [
-                                "[concat('https://', parameters('newStorageAccountName'), '.blob.core.windows.net/vmss1')]",
-                                "[concat('https://', parameters('newStorageAccountName'), '.blob.core.windows.net/vmss2')]"
+                                "[concat('https://', parameters('newStorageAccountName'), '.blob.core.windows.net/vmss1')]"
                             ],
                             "name": "vmssosdisk",
                             "caching": "ReadOnly",
@@ -155,8 +154,8 @@
                                 "properties": {
                                     "publisher": "Microsoft.OSTCExtensions",
                                     "type": "LinuxDiagnostic",
-                                    "typeHandlerVersion": "2.0",
-									"autoUpgradeMinorVersion": false,
+                                    "typeHandlerVersion": "2.1",
+				    "autoUpgradeMinorVersion": false,
                                     "settings": {
                                         "xmlCfg": "[base64(concat(variables('wadcfgxstart'),variables('wadmetricsresourceid'),variables('wadcfgxend')))]",
                                         "storageAccount": "[variables('diagnosticsStorageAccountName')]"
